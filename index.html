@@ -1,0 +1,705 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="vi">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Happy Birthday Puppy</title>
+		<link rel="shortcut icon" href="./img/dog.png" />
+
+		<script
+			type="text/javascript"
+			nonce="6e13c9d76bc4482483061edecb1"
+			src="//local.adguard.org?ts=1634111808204&amp;type=content-script&amp;dmn=redirect.nhq.vn&amp;app=com.operasoftware.Opera&amp;css=1&amp;js=1&amp;gcss=1&amp;rel=1&amp;rji=1&amp;sbe=0"
+		></script>
+		<script
+			type="text/javascript"
+			nonce="6e13c9d76bc4482483061edecb1"
+			src="//local.adguard.org?ts=1634111808204&amp;name=AdGuard%20Extra&amp;type=user-script"
+		></script>
+		<link
+			rel="stylesheet"
+			href="./css/style3.css"
+			type="text/css"
+			media="screen"
+		/>
+		<link rel="stylesheet" href="./css/all.min.css" />
+		<link rel="stylesheet" href="/css/bg/" />
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+		/>
+
+		<script type="text/javascript" charset="utf-8">
+			function hasClassName(inElement, inClassName) {
+				var regExp = new RegExp("(?:^|\\s+)" + inClassName + "(?:\\s+|$)");
+				return regExp.test(inElement.className);
+			}
+
+			function addClassName(inElement, inClassName) {
+				if (!hasClassName(inElement, inClassName))
+					inElement.className = [inElement.className, inClassName].join(" ");
+			}
+
+			function removeClassName(inElement, inClassName) {
+				if (hasClassName(inElement, inClassName)) {
+					var regExp = new RegExp(
+						"(?:^|\\s+)" + inClassName + "(?:\\s+|$)",
+						"g"
+					);
+					var curClasses = inElement.className;
+					inElement.className = curClasses.replace(regExp, " ");
+				}
+			}
+
+			function toggleClassName(inElement, inClassName) {
+				if (hasClassName(inElement, inClassName))
+					removeClassName(inElement, inClassName);
+				else addClassName(inElement, inClassName);
+			}
+
+			function toggleShape() {
+				var shape = document.getElementById("shape");
+				if (hasClassName(shape, "cube") || hasClassName(shape, "autoLoad")) {
+					if (hasClassName(shape, "cube")) {
+						removeClassName(shape, "cube");
+					}
+					if (hasClassName(shape, "autoLoad")) {
+						removeClassName(shape, "autoLoad");
+					}
+					addClassName(shape, "ring");
+				} else {
+					removeClassName(shape, "ring");
+					addClassName(shape, "cube");
+				}
+
+				var stage = document.getElementById("stage");
+				if (hasClassName(shape, "ring"))
+					stage.style.webkitTransform = "translateZ(-200px)";
+				else stage.style.webkitTransform = "";
+			}
+
+			function downloadLink() {
+				location.href = "https://www.messenger.com/t/100013878965216";
+			}
+
+			var count = 0;
+			var num_bg = 1;
+			var next_bg = 0;
+			var preLoadbg;
+
+			function timedCount() {
+				if (count >= 8) {
+					count = 0;
+					autoLoad();
+				} else {
+					count = count + 1;
+				}
+				if (next_bg >= 15) {
+					num_bg = num_bg + 1;
+					if (num_bg > 10) {
+						num_bg = 1;
+					}
+					document.body.style.backgroundImage =
+						"url(css/bg/" + num_bg + ".jpg)";
+					preLoadbg = new Image();
+					if (num_bg == 10) {
+						preLoadbg.src = "./css/bg/1.jpg";
+					} else {
+						preLoadbg.src = "./css/bg/" + (num_bg + 1) + ".jpg";
+					}
+					next_bg = 0;
+				} else {
+					next_bg = next_bg + 1;
+				}
+				setTimeout(timedCount, 1000);
+			}
+
+			function autoLoad() {
+				var shapeTest = document.getElementById("shape");
+				if (hasClassName(shapeTest, "cube")) {
+					removeClassName(shapeTest, "cube");
+					addClassName(shapeTest, "autoLoad");
+				} else {
+					toggleShape();
+				}
+			}
+		</script>
+		<script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="./js/snow.js"></script>
+		<script type="text/javascript" src="./js/ruoi.js"></script>
+		<script type="text/javascript" src="./js/player.js"></script>
+	</head>
+	<body onload="timedCount()">
+		<div id="container">
+			<div id="stage">
+				<div id="shape" class="cube backfaces">
+					<div class="plane one"></div>
+					<div class="plane two"></div>
+					<div class="plane three"></div>
+					<div class="plane four"></div>
+					<div class="plane five"></div>
+					<div class="plane six"></div>
+					<div class="plane seven"></div>
+					<div class="plane eight"></div>
+					<div class="plane nine"></div>
+					<div class="plane ten"></div>
+					<div class="plane eleven"></div>
+					<div class="plane twelve"></div>
+				</div>
+			</div>
+
+			<div class="mhn-player">
+				<!-- <div class="typewriter">
+				<h2>
+					Chúc sinh nhật Châu nhaaa!
+				</h2>
+				</div> -->
+				<!-- <div class="typewriter">
+					<h2 >
+						<a
+							href=""
+							class="typewrite"
+							data-period="2000"
+							data-type='[ "Hi, Châu Puppy... ", "Chúc mừng sinh nhật nhaaa !", "Vẫn ngàn sao tỏa sáng nè", "Luôn xinh đẹp và tươi trẻ nhé", "Và gặp nhiều may mắn hơn đó." ]'
+						>
+							<span class="wrap"></span>
+						</a>
+					</h2>
+					<script src="./js/typewriter.js"></script>
+				</div> -->
+
+				<div class="typewriter">
+					<h2>
+						<span class="typed-text"></span><span class="cursor">&nbsp;</span>
+					</h2>
+
+					<script type="text/javascript" src="./js/typewriter.js"></script>
+				</div>
+
+				<div class="album-art"></div>
+				<div class="play-list">
+					<a
+						href="#"
+						class="play"
+						data-id="1"
+						data-album=""
+						data-artist="Danny Avila"
+						data-title="1. End Of The Night"
+						data-albumart="./audio/covers/1.End-Of-The-Night.jpg"
+						data-url="./audio/1.End-Of-The-Night.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="2"
+						data-album=""
+						data-artist="Ember Island"
+						data-title="2. Umbrella"
+						data-albumart="./audio/covers/2.Umbrella.jpg"
+						data-url="./audio/2.Umbrella.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="3"
+						data-album=""
+						data-artist="Shinkai Makoto"
+						data-title="3. 君の名は (Your Name)"
+						data-albumart="./audio/covers/3.your-name.jpg"
+						data-url="./audio/3.Your_name.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="4"
+						data-album=""
+						data-artist="Alina Baraz, Khalid filous"
+						data-title="4. Floating"
+						data-albumart="./audio/covers/4.Floating.jpg"
+						data-url="./audio/4.Floating.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="5"
+						data-album=""
+						data-artist="K391, Alan Walker, Ahrix"
+						data-title="5. End of Time"
+						data-albumart="./audio/covers/5.End-of-Time.jpg"
+						data-url="./audio/5.End-of-Time.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="6"
+						data-album=""
+						data-artist="Maggie Lindemann"
+						data-title="6. Pretty Girl"
+						data-albumart="./audio/covers/6.Pretty-Girl.jpg"
+						data-url="./audio/6.Pretty-Girl.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="7"
+						data-album=""
+						data-artist="Sam Smith"
+						data-title="7. Too Good At Goodbyes"
+						data-albumart="./audio/covers/7.Too-Good-At-Goodbyes.jpg"
+						data-url="./audio/7.Too-Good-At-Goodbyes.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="8"
+						data-album=""
+						data-artist="DAOKO × 米津玄師"
+						data-title="8. 打上花火 (nhạc Nhật)"
+						data-albumart="./audio/covers/8.Firework-米津玄師-打上花火.jpg"
+						data-url="./audio/8.Firework-米津玄師-打上花火.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="9"
+						data-album=""
+						data-artist="Covered by コバソロ 相沢"
+						data-title="9. 香水 瑛人 (nhạc Nhật)"
+						data-albumart="./audio/covers/9.香水-瑛人.jpg"
+						data-url="./audio/9.香水-瑛人.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="10"
+						data-album=""
+						data-artist="大籽"
+						data-title="10. 白月光与朱砂痣"
+						data-albumart="./audio/covers/10.白月光与朱砂痣-大籽.jpg"
+						data-url="./audio/10.白月光与朱砂痣-大籽.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="11"
+						data-album=""
+						data-artist="王七七"
+						data-title="11. 我愿意平凡的陪在你身旁"
+						data-albumart="./audio/covers/11.Em-nguyen-lam-ng-binh-thuong-ben-canh-anh_我愿意平凡的陪在你身旁-王七七.jpg"
+						data-url="./audio/11.Em-nguyen-lam-ng-binh-thuong-ben-canh-anh_我愿意平凡的陪在你身旁-王七七.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="12"
+						data-album=""
+						data-artist="是七叔呢"
+						data-title="12. 燕无歇"
+						data-albumart="./audio/covers/12.燕无歇-是七叔呢.jpg"
+						data-url="./audio/12.燕无歇-是七叔呢.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="13"
+						data-album=""
+						data-artist="Covered by Tate McRae"
+						data-title="13. You broke me first"
+						data-albumart="./audio/covers/13.You-broke-me-first.jpg"
+						data-url="./audio/13.You-broke-me-first.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="14"
+						data-album=""
+						data-artist="Slander, Dylan Matthew"
+						data-title="14. Love is gone"
+						data-albumart="./audio/covers/14.Love-is-gone.jpg"
+						data-url="./audio/14.Love-is-gone.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="15"
+						data-album=""
+						data-artist="Twocolors"
+						data-title="15. Lovefool"
+						data-albumart="./audio/covers/15.lovefool.jpg"
+						data-url="./audio/15.lovefool.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="16"
+						data-album=""
+						data-artist="Cash Cash"
+						data-title="16. How To Love"
+						data-albumart="./audio/covers/16.how-to-love.jpg"
+						data-url="./audio/16.how-to-love.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="17"
+						data-album=""
+						data-artist="Mackenzie Ziegler"
+						data-title="17. Breathe"
+						data-albumart="./audio/covers/17.Breathe-Mackenzie_Ziegler.jpg"
+						data-url="./audio/17.Breathe-Mackenzie_Ziegler.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="18"
+						data-album=""
+						data-artist="Serena"
+						data-title="18. Safari"
+						data-albumart="./audio/covers/18.safari-Serena.jpg"
+						data-url="./audio/18.safari-Serena.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="19"
+						data-album=""
+						data-artist="Selena Gomez (Boyband Cover)"
+						data-title="19. Wolves"
+						data-albumart="./audio/covers/19.Selena_Gomez-Wolves.jpg"
+						data-url="./audio/19.Selena_Gomez-Wolves.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="20"
+						data-album=""
+						data-artist="Cover by Adam Christopher"
+						data-title="20. So Far Away"
+						data-albumart="./audio/covers/20.So-Far-Away.jpg"
+						data-url="./audio/20.So-Far-Away.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="21"
+						data-album=""
+						data-artist="Reynard Silva"
+						data-title="21. The way I still love you"
+						data-albumart="./audio/covers/21.the-way-i-still-love-you.jpg"
+						data-url="./audio/21.the-way-i-still-love-you.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="22"
+						data-album=""
+						data-artist="Chromance"
+						data-title="22. Wrap Me In Plastic"
+						data-albumart="./audio/covers/22.Wrap-Me-In-Plastic.jpg"
+						data-url="./audio/22.Wrap-Me-In-Plastic.mp3"
+					>
+					</a>
+
+					<a
+						href="#"
+						class="play"
+						data-id="23"
+						data-album=""
+						data-artist="Jason Mraz"
+						data-title="23. I'm Yours"
+						data-albumart="audio/covers/23.im-yours.jpg"
+						data-url="./audio/23.Im_Yours.mp3"
+					>
+					</a>
+
+					<a
+						href="#"
+						class="play"
+						data-id="24"
+						data-album=""
+						data-artist="Maroon 5"
+						data-title="24. Girls Like You"
+						data-albumart="/audio/covers/24.girls-like-you.jpg"
+						data-url="./audio/24.Girls_Like_You.mp3"
+					>
+					</a>
+
+					<a
+						href="#"
+						class="play"
+						data-id="25"
+						data-album=""
+						data-artist="Shiloh Dynasty"
+						data-title="25. My Girl"
+						data-albumart="./audio/covers/25.my-girl.jpg"
+						data-url="./audio/25.My_Girl.mp3"
+					>
+					</a>
+
+					<a
+						href="#"
+						class="play"
+						data-id="26"
+						data-album=""
+						data-artist="911"
+						data-title="26. I Do"
+						data-albumart="./audio/covers/26.i-do.jpg"
+						data-url="./audio/26.I_Do.mp3"
+					>
+					</a>
+
+					<a
+						href="#"
+						class="play"
+						data-id="27"
+						data-album=""
+						data-artist="Fiona Fung"
+						data-title="27. A Little Love"
+						data-albumart="./audio/covers/27.a-little-love.jpg"
+						data-url="./audio/27.A_Little_Love.mp3"
+					>
+					</a>
+
+					<a
+						href="#"
+						class="play"
+						data-id="28"
+						data-album=""
+						data-artist="Shane Filan"
+						data-title="28. Beautiful In White"
+						data-albumart="./audio/covers/28.beautiful-in-white.jpg"
+						data-url="./audio/28.Beautiful_In_White.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="29"
+						data-album=""
+						data-artist="Ofenbach"
+						data-title="29. You Don't Know Me"
+						data-albumart="./audio/covers/29.You_Dont_Know_Me.jpg"
+						data-url="./audio/29.You_Dont_Know_Me.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="30"
+						data-album=""
+						data-artist="Anne Marie"
+						data-title="30. 2002"
+						data-albumart="./audio/covers/30.2002.jpg"
+						data-url="./audio/30.2002.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="31"
+						data-album=""
+						data-artist="Cover by SeoRyoung"
+						data-title="31. Savage Love"
+						data-albumart="./audio/covers/31.Savage_love.jpg"
+						data-url="./audio/31.Savage_Love.mp3"
+					>
+					</a>
+		
+					<a
+						href="#"
+						class="play"
+						data-id="32"
+						data-album=""
+						data-artist="Jun Phạm"
+						data-title="32. Có ai"
+						data-albumart="./audio/covers/32.Co_ai.jpg"
+						data-url="./audio/32.Co_ai.mp3"
+					>
+					</a>
+		
+					<a
+						href="#"
+						class="play"
+						data-id="33"
+						data-album=""
+						data-artist="Jun Phạm"
+						data-title="33. Cô gái bên nhà"
+						data-albumart="./audio/covers/33.Co_gai_ben_nha.jpg"
+						data-url="./audio/33.Co_gai_ben_nha.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="34"
+						data-album=""
+						data-artist="Jun Phạm"
+						data-title="34. Đã từng là chúng ta"
+						data-albumart="./audio/covers/34.Da_tung_la_chung_ta.jpg"
+						data-url="./audio/34.Da_tung_la_chung_ta.mp3"
+					>
+					</a>		
+					<a
+						href="#"
+						class="play"
+						data-id="35"
+						data-album=""
+						data-artist="Jun Phạm"
+						data-title="35. Thương em hơn chính anh"
+						data-albumart="./audio/covers/35.Thuong_em_hon_chinh_anh.jpg"
+						data-url="./audio/35.Thuong_em_hon_chinh_anh.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="36"
+						data-album=""
+						data-artist="Jun Phạm"
+						data-title="36. Đường về quê"
+						data-albumart="./audio/covers/36.Duong_ve_que.jpg"
+						data-url="./audio/36.Đuong_ve_que.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="37"
+						data-album=""
+						data-artist="Jun Phạm"
+						data-title="37. Tân thời"
+						data-albumart="./audio/covers/37.Tan_Thoi.jpg"
+						data-url="./audio/37.Tan_Thoi.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="38"
+						data-album=""
+						data-artist="Jun Phạm"
+						data-title="38. Những năm tháng đó có tôi yêu người"
+						data-albumart="./audio/covers/38.Nhung_nam_thang_do_co_toi_yeu_nguoi.jpg"
+						data-url="./audio/38.Nhung_nam_thang_do_co_toi_yeu_nguoi.mp3"
+					>
+					</a>
+					<a
+						href="#"
+						class="play"
+						data-id="39"
+						data-album=""
+						data-artist="Jun Phạm"
+						data-title="39. Đôi lời"
+						data-albumart="./audio/covers/39.Doi_loi.jpg"
+						data-url="./audio/39.Doi_loi.mp3"
+					>
+					</a>
+				</div>
+				<div class="audio">
+					<audio id="player" class="music" data-id="1" autoplay>
+						<source src="./audio/That_Girl.mp3" type="audio/mpeg" />
+					</audio>
+				</div>
+				<div class="current-info">
+					<div class="song-artist"></div>
+					<!-- <div class="song-album"></div> -->
+					<div class="song-title"></div>
+				</div>
+				<div class="controls">
+					<a href="#" class="toggle-play-list"><i class="fa fa-list-ul"></i></a>
+					<div class="duration clearfix">
+						<span class="pull-left play-position"></span>
+						<span class="pull-right"
+							><span class="play-current-time">00:00</span> /
+							<span class="play-total-time">00:00</span></span
+						>
+					</div>
+					<div class="progress"><div class="bar"></div></div>
+					<div class="action-button">
+						<a href="#" class="prev"><i class="fa fa-step-backward"></i></a>
+						<a href="#" class="play-pause"><i class="fa fa-pp"></i></a>
+						<a href="#" class="stop"><i class="fa fa-stop"></i></a>
+						<a href="#" class="next"><i class="fa fa-step-forward"></i></a>
+						<input
+							type="range"
+							class="volume"
+							min="0"
+							max="1"
+							step="0.1"
+							value="0.8"
+							data-css="0.8"
+						/>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="audio">
+			<audio id="player" controls autoplay>
+				<source src="audio/That_Girl.mp3" type="audio/mpeg">
+			</audio>
+		</div> -->
+			<div class="author">
+				<button onclick="downloadLink()" class="fa fa-chevron-circle-right">
+					Muốn cảm ơn Teoo thì ấn vô đây nè
+				</button>
+			</div>
+		</div>
+		<script type="text/javascript">
+			/**
+		<--var audios = [
+			"audio/That_Girl.mp3",
+			"audio/Im_Yours.mp3",
+			"audio/My_Girl.mp3",
+			"audio/Girls_Like_You.mp3",
+			"audio/What_Makes_You_Beautiful.mp3",
+			"audio/I_Do.mp3",
+			"audio/A_Little_Love.mp3",
+			"audio/Beautiful_In_White.mp3",
+			"audio/Proud_Of_You.mp3"
+		];
+		var music = document.getElementById("player");
+		var getSrc = document.getElementsByTagName("source");
+		getSrc[0].src = audios[Math.floor(Math.random() * 10)];
+		music.load();
+		var index = audios.indexOf(getSrc[0].getAttribute("src"));
+		music.addEventListener('ended', function() {
+			if(index == -1 || index >= 9) {
+				index = 0;
+			} else {
+				index = index + 1;
+			}
+			getSrc[0].src = audios[index];
+			music.load();
+			music.play();       
+		}); 
+		*/
+			var firstPreload = new Image();
+			firstPreload.src = "css/bg/2.jpg";
+		</script>
+		<!--//[ https://www.facebook.com/tuantnc ]//-->
+	</body>
+</html>
